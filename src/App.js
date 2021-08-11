@@ -13,7 +13,7 @@ function App() {
       'redirect_url': '',
       'enable_one_tap': false,
       'logout_url': '',
-      'login_methods': ['google', 'email'],
+      'login_methods': ['google', 'email', 'phone'],
       'custom': true,
     });
     if (typeof auth.login === "function") {
@@ -24,6 +24,8 @@ function App() {
       // setTimeout(function() {auth.initatePhoneLogin(1, '9811123129').then(m => {console.log(m)})}, 1000);
       // setTimeout(function() {auth.verifyPhoneLogin(1, '1123497568', 123456).then(m => {console.log(m)})}, 1000);
       // setTimeout(function() {auth.signupPhoneLogin('Suraj', 'def84@def.def').then(m => {console.log(m)})}, 2000);
+      setTimeout(function() {auth.initiateEmailLogin('pradeep16ee@gmail.com').then(m => {console.log(m)})}, 1000);
+      setTimeout(function() {auth.verifyEmailLogin('pradeep16ee@gmail.com', 'ABCDEF').then(m => {console.log(m)})}, 1000);
     }
   }, []);
 
