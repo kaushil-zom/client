@@ -15,17 +15,18 @@ function App() {
       'logout_url': '',
       'login_methods': ['google', 'email', 'phone'],
       'custom': true,
+      'refresh_enable': false,
     });
     if (typeof auth.login === "function") {
       // auth.login("IFRAME", "login_ui");
       // auth.logout();
       // auth.refresh();
       // auth.migrate();
-      // setTimeout(function() {auth.initatePhoneLogin(1, '9811123129').then(m => {console.log(m)})}, 1000);
-      // setTimeout(function() {auth.verifyPhoneLogin(1, '1123497568', 123456).then(m => {console.log(m)})}, 1000);
+      // setTimeout(function() {auth.initiatePhoneLogin(1, '1123497568', 'sms').then(m => {console.log(m)})}, 1000);
+      setTimeout(function() {auth.verifyPhoneLogin(1, '1123497568', 123456).then(m => {console.log(m)})}, 1000);
       // setTimeout(function() {auth.signupPhoneLogin('Suraj', 'def84@def.def').then(m => {console.log(m)})}, 2000);
-      setTimeout(function() {auth.initiateEmailLogin('pradeep16ee@gmail.com').then(m => {console.log(m)})}, 1000);
-      setTimeout(function() {auth.verifyEmailLogin('pradeep16ee@gmail.com', 'ABCDEF').then(m => {console.log(m)})}, 1000);
+      // setTimeout(function() {auth.initiateEmailSignup('gasfla222@agljsf.slgajsl', 'SURAJ').then(m => {console.log(m)})}, 1000);
+      // setTimeout(function() {auth.verifyEmailLogin('gasfla222@agljsf.slgajsl', 'ABCDEF').then(m => {console.log(m)})}, 2000);
     }
   }, []);
 
