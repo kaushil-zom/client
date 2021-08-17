@@ -13,7 +13,7 @@
     "zoauth": "git+ssh://git@github.com:zomansuraj/auth-sdk-js.git"
   },
   "scripts": {
-    "start": "HTTPS=true PORT=443 REACT_APP_COOKIE_DOMAIN=.zdev.net REACT_APP_ACCOUNTS_DOMAIN=https://accounts.eks.zdev.net react-scripts start ",
+    "start": "HTTPS=true REACT_APP_COOKIE_DOMAIN=.zdev.net REACT_APP_ACCOUNTS_DOMAIN=https://accounts.eks.zdev.net react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
