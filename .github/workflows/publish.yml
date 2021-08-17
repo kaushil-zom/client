@@ -15,6 +15,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       # Publish to npm
-      - run: echo ${{ secrets.SURAJ_SECRET }} && npm publish --access public
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.SURAJ_SECRET }}
