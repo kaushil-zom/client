@@ -1,24 +1,23 @@
-name: "publish"
-
-on: 
-  push:
-    branches:
-      - master
-
-jobs:
+name: Node.js Package
+on:
   release:
-    name: publish
-    runs-on: ubuntu-latest
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+      packages: write 
     steps:
-      - name: checkout
-        uses: actions/checkout@v2.1.1
-      - name: node
-        uses: actions/setup-node@v1.4.2
+      - uses: actions/checkout@v2
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org
-      - name: publish
-        run: npm publish
-        working-directory: client
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@zomansuraj'
+      - run: npm install
+      - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.SURAJ_SECRET}}
+          NODE_AUTH_TOKEN: ${{ secrets.SURAJ_SECRET }}
